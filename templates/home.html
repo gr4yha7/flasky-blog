@@ -1,0 +1,23 @@
+<!-- child template -->
+{% extends "base.html" %} 
+{% block content %}
+  <div class="container mt-4">
+    <div class="row">
+      {% for post in posts %}
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img src="{{ post.image_url }}" height="200" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.content }}</p>
+                <br>
+                <p class="card-text">- By {{ post.author }}</p>
+                <p class="card-text">{{ post.posted_at }}</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
